@@ -1,0 +1,68 @@
+[
+    {
+        "name": "sample.png",
+        "grade": "D",
+        "face_count": 0,
+        "text_region_count": 0,
+        "watermark_flagged": false,
+        "verdicts": {
+            "ai_generation": {
+                "verdict": "possible_aigc"
+            },
+            "c2pa": {
+                "verdict": "valid",
+                "applicable": true,
+                "has_manifest": true,
+                "trusted": true
+            },
+            "camera_fingerprint": {
+                "applicable": true,
+                "matched": true,
+                "encoder_name": "Adobe Photoshop",
+                "encoder_family": "adobe",
+                "quality_level": 90
+            },
+            "findings": [
+                {
+                    "label": "Declared AI-generated (C2PA Content Credentials)",
+                    "severity": "info"
+                },
+                {
+                    "label": "No camera capture metadata present",
+                    "severity": "medium"
+                },
+                {
+                    "label": "Editing-software encoder signature (Adobe)",
+                    "severity": "medium"
+                },
+                {
+                    "label": "Noise pattern inconsistent with a single capture",
+                    "severity": "high"
+                }
+            ]
+        },
+        "assets": [
+            {
+                "asset_id": "9e5f6a41-5cc2-47ec-acd2-3b2c1d645643",
+                "category": "display_image",
+                "mime_type": "image/jpeg",
+                "file_size": 109784,
+                "download_path": "/api/analyse/asset/9e5f6a41-5cc2-47ec-acd2-3b2c1d645643"
+            },
+            {
+                "asset_id": "52a1d4f1-4de4-4e00-ace6-bd75d1ef9fe6",
+                "category": "forensic_noise_map",
+                "mime_type": "image/jpeg",
+                "file_size": 298396,
+                "download_path": "/api/analyse/asset/52a1d4f1-4de4-4e00-ace6-bd75d1ef9fe6"
+            },
+            {
+                "asset_id": "476b31cf-08ff-41d0-9232-8f9571a45408",
+                "category": "forensic_clone",
+                "mime_type": "image/jpeg",
+                "file_size": 304216,
+                "download_path": "/api/analyse/asset/476b31cf-08ff-41d0-9232-8f9571a45408"
+            }
+        ]
+    }
+]
