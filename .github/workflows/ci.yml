@@ -1,0 +1,30 @@
+name: CI
+
+# Runs on the standalone snapWONDERS-SDK-Go repo (this file becomes .github/workflows/ci.yml there
+# after `git subtree split`). Offline tests need no API key.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test — Go ${{ matrix.go-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        go-version: ["1.21", "1.22", "1.23"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go-version }}
+      - name: Check formatting
+        run: test -z "$(gofmt -l .)"
+      - name: Vet
+        run: go vet ./...
+      - name: Test
+        run: go test ./...
