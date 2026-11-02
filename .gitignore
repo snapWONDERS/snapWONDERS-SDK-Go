@@ -1,0 +1,5 @@
+# Go build / test artefacts
+/bin/
+*.test
+*.out
+coverage.txt
